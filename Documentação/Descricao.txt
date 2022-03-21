@@ -3,16 +3,17 @@ Descrição geral:
         que vem sendo discutido: As principais mudanças climáticas que ocorrem atualmente, resultando assim no aquecimento global.
 	Abordamos os principais pontos em que há uma necessidade de contribuirmos para a resolução desse problema que está cada vez mais presente.
 	O site de forma intuitiva e simples, busca solucionar essa causa!
-	A seguir temos sua descrição:	
+	A seguir temos sua descrição por parte do usuário:	
 
 	1.0 - Acesso ao site/Login
       	  1.1 - Ao entrar no site o usuário tem a opção de criar ou fazer o login (opcional)
           1.2 - Realizando o login temos uma mensagem de saudação
+	  1.3 - Há uma exibição de algumas tarefas, em que se o usuário cumprir seu nível aumenta
           1.3 - Após isso ele é redirecionado a página principal
 
         2.0 - Conteúdo do Home
           2.1 - Há uma imagem em destaque, destacando a importância da conscientização referente ao tema (em carroussel ou parallax)
-          2.2 - Na navbar temos as opções Home, Info, Game (quiz interativo), Blog e About us
+          2.2 - Na navbar temos as opções Home, Info, Calculadora CO2, Quiz interativo, Help us e About us
           2.3 - Cada link presente na navbar, leva a sua página em questão
 
         3.0 - Conteúdo da Info
@@ -20,25 +21,35 @@ Descrição geral:
 	  3.2 - Usando o scroll temos a interação a seguir 
           3.3 - Informações como desmatamento, baixa reciclagem, emissão de CO2 e gás metano, e por fim desperdício de comida
           3.4 - Foco na solução como reflorestamento, aumentar reciclagem, redução de emissão de gases, e alimentação sem desperdício de uma forma sustentável
-	  3.5 - Possível implementação: Logo mais abaixo das infos, há um campo a ser preenchido, em que se calcula a media de CO2 emitida pela pessoa ao longo do ano
-	        O calculo seria com a média dos KM (ou metros) multiplicado por ano (365 dias); e uma média baseada na expectativa de vida geral (76,8 anos)
+		
+	4.0 - Calculadora CO2
+          4.1 - Uma breve apresentação sobre essa funcionalidade do site
+          4.2 - Há um campo a ser preenchido, em que se calcula a media de CO2 emitida pela pessoa ao longo do ano
+          4.3 - O calculo seria com a média dos KM (ou metros) multiplicado por ano (365 dias); e uma média baseada na expectativa de vida geral (76,8 anos)
+	  4.4 - É apresentado soluções para se combater a emissão de CO2, calculando o reflorestamento com base nesses dados por exemplo
 
-	4.0 - Jogo ou quiz
-          4.1 - Se o usuário fez login há seu nome, uma imagem (ou avatar) e seu nível (ou ranking) como principais itens exibidos em tela
-	  4.2 - Clicando em (Iniciar Game) há uma interação em tela
-          4.3 - Temos a exibição de alguns cards em tela, em que o usuário pode escolher clicando sobre qual deseja
-          4.4 - Os cards possuem imagens, e uma descrição com atributos e informações referentes a uma ação em que contribui para a conscientização
-          4.5 - Ao fim da rodada, é exibida a pontuação e uma mensagem que muda conforme a pontução geral do usuário (em porcentagem de aproveitamento)
-          4.6 - A pontuação geral contribui para o nível do usário, e permite desbloquear recompensas (um novo avatar por exemplo)
-	  4.7 - Ao final há a opção sair ou jogar novamente.
+	5.0 - Quiz interativo
+          5.1 - Se o usuário fez login há seu nome, uma imagem (ou avatar) e seu nível (ou ranking) como principais itens exibidos em tela
+	  5.2 - Clicando em (Iniciar) há uma interação em tela
+          5.3 - Temos a exibição de alguns cards em tela, em que o usuário pode escolher clicando sobre qual deseja
+          5.4 - Os cards possuem imagens, e uma descrição com atributos e informações referentes a uma ação em que contribui para a conscientização
+          5.5 - Ao fim da rodada, é exibida a pontuação e uma mensagem que muda conforme a pontução geral do usuário (em porcentagem de aproveitamento)
+          5.6 - A pontuação geral contribui para o nível do usário, e permite desbloquear recompensas
+	  5.7 - Ao final há a opção sair ou jogar novamente.
 
-        5.0 - Conteúdo do Blog
-          5.1 - Há a exibição de uma imagem em que se remete a uma contribuição coletiva
-          5.2 - Apresentação de principais comentários e questionamentos de pessoas referentes ao assunto apresentado no site e a conscientização
-          5.3 - Possibilidade de preenchimento de um Google Forms onde a pessoa expressa sua opinião e se for válida, pode ser exibida no site posteriormente
-          5.4 - Avaliação em estrelas do site, através de um simples click
+        6.0 - Conteúdo do Help us
+          6.1 - Há a exibição de uma imagem em que se remete a uma contribuição coletiva e a doações, pois ajudar o próximo também soluciona questões ambientais
+          6.2 - É apresentado a opção de doação de duas formas diferentes
+          6.3 - Na opção por pix há informações da conta ou o QR code 
+          6.4 - Já a opção (Doe o mais perto de você), direciona a um endereço (fictício) onde se pode fazer a doção de roupas ou alimentos
 
-        6.0 - Conteúdo do About us
-          6.1 - Há uma imagem em exibição
-          6.2 - É apresentada algumas informações sobre o desenvolvimento e a ideia inicial do site
-          6.3 - Agradecimentos 
+        7.0 - Conteúdo do About us
+          7.1 - Há uma imagem em exibição
+          7.2 - É apresentada algumas informações sobre o desenvolvimento e a ideia inicial do site
+          7.3 - Agradecimentos
+	  
+	Possíveis implementações:
+	Conteúdo do fórum
+          8.1 - Apresentação de principais comentários e questionamentos de pessoas referentes ao assunto apresentado no site e a conscientização
+          8.2 - Possibilidade de preenchimento de um Google Forms onde a pessoa expressa sua opinião e se for válida, pode ser exibida no site posteriormente
+          8.3 - Avaliação em estrelas do site, através de um simples click
