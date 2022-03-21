@@ -9,7 +9,7 @@ Descrição geral:
       	  1.1 - Ao entrar no site o usuário tem a opção de criar ou fazer o login (opcional)
           1.2 - Realizando o login temos uma mensagem de saudação
 	  1.3 - Há uma exibição de algumas tarefas, em que se o usuário cumprir seu nível aumenta
-          1.3 - Após isso ele é redirecionado a página principal
+          1.4 - Após isso ele é redirecionado a página principal
 
         2.0 - Conteúdo do Home
           2.1 - Há uma imagem em destaque, destacando a importância da conscientização referente ao tema (em carroussel ou parallax)
