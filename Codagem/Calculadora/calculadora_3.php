@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+$soma = $_SESSION['soma'];
+$_SESSION['soma'] = $soma + $_POST['casa1'] + ($_POST['casa2'] * 38) + $_POST['casa3'] + ($_POST['casa4'] * 22.674);
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +24,7 @@
         <img src="images_calculadora/porco_sombra.png" width=120 height=120>
       </div>
 
-      <form action="" method="post">
+      <form action="calculadora_4.php" method="post">
 
         <div class="form_calc">
               
@@ -47,12 +56,12 @@
 
         </div>
 
-      </form>
+      
 
     </div>
 
       <button class="button_ok" type="submit">OK!</button>  
-
+      </form>
   </body>
 
 </html>

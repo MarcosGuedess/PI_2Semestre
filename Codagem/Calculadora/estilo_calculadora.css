@@ -128,11 +128,17 @@ input{
     color: #000000;
     font-weight: bold;
     font-size: 2rem;
-
+    transition-duration: 0.4s;
     background: #FFFFFF;
     border: 4px solid #FBAD64;
     box-sizing: border-box;
     width: 10rem;
     height: 3rem;
     border-radius: 30px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button_ok:hover{
+    background: #000000; 
+    color: white;
 }

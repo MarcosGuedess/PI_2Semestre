@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+$_SESSION['soma'] = 0;
+$_SESSION['soma'] = ($_POST['gaso1'] * 2.28) + ($_POST['gaso2'] * 2.7) + ($_POST['gaso4'] * 1.51);
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +24,7 @@
         <img src="images_calculadora/casa_sombra.png" width=120 height=120>
       </div>
 
-      <form action="" method="post">
+      <form action="calculadora_3.php" method="post">
 
         <div class="form_calc">
               
@@ -27,14 +36,14 @@
             </div>
               
             <div class="form_item_bottom">
-              <label for="casa2">Quantos meses dura um botijão de gás na sua casa?</label><br><br>
+              <label for="casa2">Quantos botijões de gás você compra por mês?</label><br><br>
               <input type="number" id="casa2" name="casa2">
             </div>
           </div>
 
           <div class="form_calc_2">
             <div class="form_item_top">
-              <label for="casa3">Qual a média do consumo mensal de energia?</label> <br><br>
+              <label for="casa3">Qual a média do consumo mensal de energia em KWH?</label> <br><br>
               <input type="number" id="casa3" name="casa3"><br>
             </div>
 
@@ -46,12 +55,12 @@
 
         </div>
 
-      </form>
+      
 
     </div>
 
       <button class="button_ok" type="submit">OK!</button>  
-
+      </form>
   </body>
 
 </html>

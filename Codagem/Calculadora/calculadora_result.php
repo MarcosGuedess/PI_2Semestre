@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +20,7 @@
         <h3 class="text_result">Resultado</h3>
       </div>
 
-      <form action="" method="post">
+      
 
         <div class="form_calc">
               <div class="result_box">
@@ -26,14 +31,14 @@
                             <img src="images_calculadora/planeta.png" width=120 height=120>
                         </div>
                         <div class="CO2_total">
-                            <h4>2000 kg</h4>
+                            <h4><?php echo $_SESSION['soma']; ?> kg</h4>
                         </div>
                     </div>
 
               </div>
         </div>
 
-      </form>
+      
 
     </div>
 

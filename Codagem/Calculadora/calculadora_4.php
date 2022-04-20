@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+$soma = $_SESSION['soma'];
+$_SESSION['soma'] = $soma + $_POST['animal1'] + $_POST['animal2'] + $_POST['animal3'] + $_POST['animal4'];
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -15,7 +25,7 @@
         <img src="images_calculadora/lixo_sombra.png" width=120 height=120>
       </div>
 
-      <form action="" method="post">
+      <form action="calculadora_result.php" method="post">
         
         <div class="form_calc">
 
@@ -40,12 +50,12 @@
 
         </div>
 
-      </form>
+      
 
     </div>
 
       <button class="button_ok" type="submit">OK!</button>  
-
+      </form>
   </body>
 
 </html>
