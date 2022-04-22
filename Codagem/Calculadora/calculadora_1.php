@@ -2,6 +2,10 @@
 
 session_start();
 
+header('Cache-Control: no cache');
+
+$_SESSION['soma'] = 0;
+
 ?>
 
 <!DOCTYPE html>
@@ -29,26 +33,26 @@ session_start();
           <div class="form_calc_1">
             <div class="form_item_top">
               <label for="gaso1">Quanto de gasolina você costuma gastar por mês?</label><br><br>
-              <input type="number" id="gaso1" name="gaso1"><br>
+              <input type="number" id="gaso1" name="gaso1" required><br>
             </div>
               
             <div class="form_item_bottom">
               <label for="gaso2">Quanto de diesel você costuma gastar por mês?</label><br><br>
-              <input type="number" id="gaso2" name="gaso2">
+              <input type="number" id="gaso2" name="gaso2" required>
             </div>
           </div>
 
           <div class="form_calc_2">
             <div class="form_item_top">
               <label for="gaso3">Seu carro é econômico?</label> <br><br>
-              <input class="input_radio" type="radio" name="gaso3" value="sim"/> Sim<br />
-              <input class="input_radio" type="radio" name="gaso3" value="nao"/> Não<br />
+              <input class="input_radio" type="radio" name="gaso3" value="sim"> Sim<br />
+              <input class="input_radio" type="radio" name="gaso3" value="nao"> Não<br />
 
             </div>
 
             <div class="form_item_bottom">
               <label for="gaso4">Quanto de etanol você costuma gastar por mês?</label><br><br>
-              <input type="number" id="gaso4" name="gaso4">
+              <input type="number" id="gaso4" name="gaso4" required>
             </div>  
           </div>
 

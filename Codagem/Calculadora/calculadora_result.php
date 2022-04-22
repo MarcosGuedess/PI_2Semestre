@@ -1,5 +1,16 @@
 <?php
 session_start();
+header('Cache-Control: no cache');
+
+if(!isset($_POST['lixo1']) || !isset($_POST['lixo2'])){
+  header("location: calculadora_1.php");
+  exit;
+}
+
+if(!isset($_SESSION['soma'])){
+  header("location: calculadora_1.php");
+  exit;
+}
 
 ?>
 
