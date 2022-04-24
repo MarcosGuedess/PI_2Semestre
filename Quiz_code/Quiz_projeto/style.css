@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: gray;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover{
+    opacity: 0.7;
+}
+
+.logo{
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: orange;
+    height: 8vh;
+    border:rgba(255, 254, 254, 0.7);
+    border-style:outset;
+}
+
+main{
+    background: url("Images/Tema1.jpg") no-repeat center center;
+    background-size: cover;
+    height: 92vh;
+}
+
+footer{
+    border:rgba(255, 254, 254, 0.7);
+    border-style: outset;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li{
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.container{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    border-radius: 15px;
+    color: white;
+    width: 300px;
+    text-align: center;
+}
+
+.container img{
+    width: 300px;
+    height: 145px;
+}
+
+.respostas{
+    list-style-type: none;
+    background-color: orange;
+    border:rgba(255, 254, 254, 0.7);
+    border-style:inset;
+    padding: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    border-radius: 10px;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.respostas:hover{
+    background-color: rgba(255, 166, 0, 0.670);
+    border:rgba(255, 166, 0, 0.670);
+    border-style: outset;
+    color: black;
+}
+
+.centro{
+    text-align: center;
+    background-color: orange;
+    height: 2vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding: 8px;
+    font-size: 12px;
+
+}
+
+.bloqueado{
+    display: none;
+}
+
+.bloqueado:hover{
+    display: none;
+}
+
+.questoes{
+    font-size: 12px;
+}
