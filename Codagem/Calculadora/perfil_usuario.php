@@ -1,9 +1,33 @@
 <?php
+
     $nivel = 1;
     $exp = 80;
     $arvore = 0;
     $pont_quiz = 0;
     $media_co2 = 0;
+?>
+
+<?php
+$servername = "localhost:3306";
+$username = "root";
+$password = "";
+
+// Create connection
+//$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+//if ($conn->connect_error) {
+//  die("Connection failed: " . $conn->connect_error);
+//}
+
+//$id=1;
+
+//$sql = "SELECT u.id, u.nome, u.foto_perfil, p.pontuacao_quiz,p.resultado_calc,p.atividades_completas,p.nivel 
+//        FROM usuario u, pontuacao p 
+//        WHERE u.id = p.id_usuario";
+//$result = mysqli_query($conn, $sql);
+
+//mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +39,7 @@
     <link rel="stylesheet" href="estilo_perfil.css">
   </head>
 
-  <body>
+  <body class="fundo_perfil">
     <div class="user">
         <br><br>
         <div class="user_photo"> 

@@ -53,8 +53,11 @@ if(!isset($_SESSION['soma'])){
 
     </div>
 
-      <button class="button_ok" type="submit">Fim</button>  
-
+    <a href="perfil_usuario.php">
+      <button class="button_ok">
+        OK!
+      </button>
+    </a>
   </body>
 
 </html>
