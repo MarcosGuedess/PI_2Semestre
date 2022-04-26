@@ -1,33 +1,44 @@
 <?php
-
-    $nivel = 1;
     $exp = 80;
-    $arvore = 0;
-    $pont_quiz = 0;
-    $media_co2 = 0;
 ?>
 
 <?php
 $servername = "localhost:3306";
 $username = "root";
 $password = "";
+$dbname = "pi_2semestre";
 
-// Create connection
-//$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
-//if ($conn->connect_error) {
-//  die("Connection failed: " . $conn->connect_error);
-//}
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
 
-//$id=1;
+$id=1;
 
-//$sql = "SELECT u.id, u.nome, u.foto_perfil, p.pontuacao_quiz,p.resultado_calc,p.atividades_completas,p.nivel 
-//        FROM usuario u, pontuacao p 
-//        WHERE u.id = p.id_usuario";
-//$result = mysqli_query($conn, $sql);
+$sql = "SELECT u.id as id, u.nome as nome, u.foto_perfil as foto, 
+        p.pontuacao_quiz as pont, p.resultado_calc as calc, 
+        p.atividades_completas as ativd, p.nivel as niv 
+        FROM usuario u, pontuacao p 
+        WHERE u.id = p.id_usuario";
 
-//mysqli_close($conn);
+$result = $conn->query($sql);
+
+if ($result) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    $nome_user = $row["nome"];
+    $foto_user = $row["foto"];
+    $pontuacao_quiz = $row["pont"];
+    $calculo = $row["calc"];
+    $nivel = $row["niv"];
+    $atividade = $row["ativd"];
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +46,7 @@ $password = "";
 
   <head>
     <meta charset="utf-8">
-    <title>Perfil Usuário</title>
+    <title>Perfil de <?php echo $nome_user; ?> </title>
     <link rel="stylesheet" href="estilo_perfil.css">
   </head>
 
@@ -47,7 +58,7 @@ $password = "";
         </div>
 
         <div class="info_user">
-            <h3>Nome do Usuário</h3>
+            <h3><?php echo $nome_user; ?></h3>
             <h4>Nível <?php echo $nivel; ?></h4>
 
             <div class="progress_bar">    
@@ -74,7 +85,7 @@ $password = "";
             </div>
 
             <div class="pont_sts">
-                <p class="title_stts"><?php echo $pont_quiz?> pontos</p>
+                <p class="title_stts"><?php echo $pontuacao_quiz?> pontos</p>
                 <button>Quiz</button>
             </div>
         </div>
@@ -85,7 +96,7 @@ $password = "";
             </div>
 
             <div class="pont_sts">
-                  <p class="title_stts"><?php echo $arvore?> plantadas</p>
+                  <p class="title_stts"><?php echo $atividade?> plantadas</p>
                   <button>Atualizar</button>
             </div>
         </div>
@@ -96,7 +107,7 @@ $password = "";
             </div>
 
             <div class="pont_sts">  
-                  <p class="title_stts"><?php echo $media_co2?> kgCO²</p>
+                  <p class="title_stts"><?php echo $calculo?> kgCO²</p>
                   <a href="calculadora_1.php"><button>Calcular</button>
             </div>
         </div>
