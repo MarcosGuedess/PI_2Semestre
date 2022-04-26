@@ -28,7 +28,7 @@ let articleQuestoes = document.querySelector('.questoes')
 let alternativas = document.querySelector('#alternativas')
 
 const q0 = {
-    tela         : tela.setAttribute('src', 'Images/Urso.jpg'),
+
     numQuestao   : 0,
     pergunta     : "Pergunta",
     alternativaA : "Alternativa A",
@@ -38,7 +38,7 @@ const q0 = {
 }
 
 const q1 = {
-    //tela         : img.setAttribute('src', 'Images/Urso.jpg'),
+
     numQuestao   : 1,
     pergunta     : "O que causa o aquecimento global:",
     alternativaA : "Efeito Estufa",
@@ -48,7 +48,7 @@ const q1 = {
 }
 
 const q2 = {
-    //tela         : img.setAttribute('src', 'Images/Tema.jpg'),
+
     numQuestao   : 2,
     pergunta     : "Quando se iniciou o aquecimento global:",
     alternativaA : "Antes de 1900",
@@ -58,7 +58,7 @@ const q2 = {
 }
 
 const q3 = {
-    //tela         : img.setAttribute('src', 'Images/Arvores.jpg'),
+
     numQuestao   : 3,
     pergunta     : "Qual ação contribui para diminuir o CO2:",
     alternativaA : "Andar a pé",
@@ -68,7 +68,7 @@ const q3 = {
 }
 
 const q4 = {
-    //tela         : img.setAttribute('src', 'Images/Peixe.jpg'),
+
     numQuestao   : 4,
     pergunta     : "Uma atitude sustentável seria:",
     alternativaA : "Reduzir consumo de todas as carnes",
@@ -78,7 +78,7 @@ const q4 = {
 }
 
 const q5 = {
-    //tela         : img.setAttribute('src', 'Images/Animal.jpg'),
+
     numQuestao   : 5,
     pergunta     : "No dia a dia, precisamos:",
     alternativaA : "Reutilizar lixo orgânico",
@@ -88,7 +88,7 @@ const q5 = {
 }
 
 const q6 = {
-    //tela         : img.setAttribute('src', 'Images/Muda.jpg'),
+
     numQuestao   : 6,
     pergunta     : "A média mensal de árvores que devemos plantar é de:",
     alternativaA : "6 árvores",
@@ -98,7 +98,7 @@ const q6 = {
 }
 
 const q7 = {
-    //tela         : img.setAttribute('src', 'Images/Galho.jpg'),
+
     numQuestao   : 7,
     pergunta     : "Uma forma das empresas diminuirem a emissão:",
     alternativaA : "Multas com valores altos",
@@ -108,7 +108,7 @@ const q7 = {
 }
 
 const q8 = {
-    //tela         : img.setAttribute('src', 'Images/Monte.jpg'),
+
     numQuestao   : 8,
     pergunta     : "Quanto tempo temos para reverter o aquecimento global:",
     alternativaA : "5 anos",
@@ -117,6 +117,8 @@ const q8 = {
     correta      : "12 anos",
 }
 
+const imagens = ['Images/Urso.jpg', 'Images/Urso.jpg', 'Images/Tema.jpg', 'Images/Arvores.jpg', 
+'Images/Peixe.jpg', 'Images/Animal.jpg', 'Images/Muda.jpg', 'Images/Galho.jpg', 'Images/Monte.jpg']
 const questoes = [q0, q1, q2, q3, q4, q5, q6, q7, q8]
 
 let numero = document.querySelector('#numero')
@@ -129,7 +131,6 @@ console.log("Total de questões " + totalDeQuestoes)
 total.textContent = totalDeQuestoes
 
 //Montar primeira questão
-tela.textContent       = q1.tela
 numQuestao.textContent = q1.numQuestao
 pergunta.textContent   = q1.pergunta
 a.textContent = q1.alternativaA
@@ -143,8 +144,7 @@ c.setAttribute('value', '1C')
 
 //Montar as proximas
 function proximaQuestao(nQuestao){
-    tela.textContent     = numQuestao.tela
-    //document.getElementById("numQuestao").tela
+    img.setAttribute('src', imagens[nQuestao]), 
     numero.textContent = nQuestao
     numQuestao.textContent = questoes[nQuestao].numQuestao
     pergunta.textContent   = questoes[nQuestao].pergunta
@@ -160,8 +160,6 @@ alternativas.addEventListener('dblclick',() => {
     pontos -= 10 //Caso haja mais de um click
     if(numQuestao.value == 10 && pontos == 90) {pontos = 80}
 })
-
-    //document.getElementById('tela').src='Images/Tema.jpg';
 
 function bloquearAlternativas(){
     a.classList.add('bloqueado')
@@ -231,7 +229,7 @@ function verificar(nQuestao, resposta){
         }else{
             proximaQuestao(proxima)
         }
-    }, 150)
+    }, 180)
     desbloquearAlternativas()
 }
 
@@ -265,7 +263,6 @@ function fimDoJogo(){
         //Reiniciar quiz
         articleQuestoes.style.display = 'block'
         proximaQuestao(1)
-        img.setAttribute('src', 'Images/Arvores.jpg'),
         instrucoes.textContent = 'Leia atentamente e escolha sua resposta'
     }, 5000)
 }
