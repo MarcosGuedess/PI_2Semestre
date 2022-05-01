@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz interativo</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_quiz.css">
 </head>
-<body>
+<body class="quiz">
     <header>
         <nav>
             <a class="logo" href="/">Save The Earth</a>
@@ -32,7 +32,7 @@
             <article class='imagem'>
                 <img src="Images/Urso.jpg"  id="tela">
             </article>
-            
+
 
             <article class='questoes'>
                 <header class='questao'>
@@ -54,14 +54,18 @@
             <br>
             <article id='aviso'>Questão <span id='numero'></span> de <span id='total'></span></article>
 
+            
+
         </section>
 
         
     </main>
     <footer class='centro'>Desenvolvimento Fatec &copy; 2022</footer>
+    
 <audio preload src="Assets/Correct.mp3" id="acerto"></audio>
 <audio preload src="Assets/Incorrect.mp3" id="erro"></audio>
 <audio preload src="Assets/Victory.mp3" id="final"></audio>
+
 <script src="Quiz/quiz.js"></script>
 </body>
 </html>

@@ -173,20 +173,6 @@ function desbloquearAlternativas(){
     c.classList.remove('bloqueado')
 }
 
-//function piscarAcerto(){
-    //articleQuestoes.classList.remove('errou')
-    //articleQuestoes.classList.add('acertou')
-//}
-
-//function piscarErro(){
-    //articleQuestoes.classList.remove('acertou')
-    //articleQuestoes.classList.add('errou')
-//}
-
-//function tirarEfeito(){
-    //articleQuestoes.classList.remove('acertou')
-    //articleQuestoes.classList.remove('errou')
-//}
 
 function verificar(nQuestao, resposta){
     let numeroDaQuestao = nQuestao.value
@@ -200,18 +186,13 @@ function verificar(nQuestao, resposta){
 
     if(respostaEscolhida == certa){
         aviso.textContent = "Você acertou "
-        //piscarAcerto()
         acerto.play()
         pontos += 10
         if(nQuestao.value == 1 && pontos == 20) {pontos == 10}
     }else{
         aviso.textContent = "Você errou "
-        //piscarErro()
         erro.play()
     }
-    //setTimeout(() => {
-        //tirarEfeito()
-    //}, 150);
 
     //Atualizar placar
     placar = pontos
@@ -237,12 +218,13 @@ function fimDoJogo(){
     final.play()
     instrucoes.textContent = "Fim de Jogo!"
     numQuestao.textContent = ""
+    img.setAttribute('src', 'Images/Fim.gif')
 
     let pont = ''
     pontos == 0 ? pont = 'ponto' : pont = 'pontos'
 
-    pergunta.textContent = "Pontuação final " + pontos + " " + pont
-    aviso.textContent = "Pontuação final " + pontos + " " + pont
+    pergunta.textContent = "Parabéns! Você conseguiu  " + pontos + " " + pont
+    aviso.textContent = "Parabéns! Você conseguiu " + pontos + " " + pont
 
     a.textContent = ""
     b.textContent = ""
@@ -256,13 +238,14 @@ function fimDoJogo(){
     //Esconder article
     articleQuestoes.style.display = 'none'
 
-    setTimeout(function(){
-        pontos = 0 //Zerar placar
+    //setTimeout(function(){
+        ///pontos = 0 //Zerar placar
         //location.reload();
-        instrucoes.classList.remove('placar')
+        //location.replace("Arquivo_desejado.html")
+        ///instrucoes.classList.remove('placar')
         //Reiniciar quiz
-        articleQuestoes.style.display = 'block'
-        proximaQuestao(1)
-        instrucoes.textContent = 'Leia atentamente e escolha sua resposta'
-    }, 5000)
+        ///articleQuestoes.style.display = 'block'
+        ///proximaQuestao(1)
+        ///instrucoes.textContent = 'Leia atentamente e escolha sua resposta'
+    //}, 5000)
 }
