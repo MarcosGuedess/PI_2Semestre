@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900");
+
 *{
     margin: 0;
     padding: 0;
@@ -29,7 +31,7 @@
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #212741;
-    height: 8vh;
+    height: 6vh;
     border:rgba(255, 254, 254, 0.7);
     border-style:outset;
 }
@@ -37,7 +39,7 @@
 .quiz main{
     background: url("Images/Background.jpg") no-repeat center center;
     background-size: cover;
-    height: 92vh;
+    height: 97vh;
 }
 
 .quiz footer{
@@ -58,6 +60,8 @@
 }
 
 .container{
+    font-family: 'Poppins', sans-serif;
+    height: 81vh;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 55%;
@@ -65,19 +69,19 @@
     transform: translate(-50%, -50%);
     padding: 50px;
     border-radius: 15px;
-    color: white;
+    color: #fff;
     width: 320px;
     text-align: center;
 }
 
 .container img{
     width: 320px;
-    height: 145px;
+    height: 140px;
 }
 
 
 .respostas{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     list-style-type: none;
     background-color: #ff511a;
     border:rgba(255, 254, 254, 0.7);
@@ -87,8 +91,8 @@
     padding-right: 0px;
     width: 100%;
     border-radius: 10px;
-    color: white;
-    font-size: 15px;
+    color: #fff;;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -103,8 +107,8 @@
     text-align: center;
     background-color: #ff511a;
     height: 2vh;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;;
     padding: 8px;
     font-size: 13px;
 
@@ -120,5 +124,53 @@
 
 .questoes{
     font-size: 13px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.opcao{
+    margin-top: 48px;
+    font-family: 'Poppins', sans-serif;
+    list-style-type: none;
+    background-color: #ff511a;
+    border:rgba(255, 254, 254, 0.7);
+    border-style:inset;
+    padding: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    border-radius: 10px;
+    color: #fff;;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.opc{
+    margin-top: 24px;
+    font-family: 'Poppins', sans-serif;
+    list-style-type: none;
+    background-color: #ff511a;
+    border:rgba(255, 254, 254, 0.7);
+    border-style:inset;
+    padding: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    border-radius: 10px;
+    color: #fff;;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.opcao:hover{
+    background-color: rgba(255, 99, 70, 0.670);
+    border:rgba(255, 99, 70, 0.670);
+    border-style: outset;
+    color: black;
+}
+
+.opc:hover{
+    background-color: rgba(255, 99, 70, 0.670);
+    border:rgba(255, 99, 70, 0.670);
+    border-style: outset;
+    color: black;
 }
