@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="style/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/general.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/cadastro.css">
+
+  </head>
+
+<body>
+
+
+  <!-- ***** Header Area Start ***** -->
+   <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="" alt=""> <!--Logo-->
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="#services">Calculadora de CO2</a></li>
+                        <li class="scroll-to-section"><a href="#about">Sobre Nós</a></li>
+                        <li class="has-sub">
+                            <a href="javascript:void(0)">Acervos</a>
+                            <ul class="sub-menu">
+                                <li><a href="about-us.html">Doações</a></li>
+                                <li><a href="our-services.html">Noticias</a></li>
+                                <li><a href="Quiz.html">Quiz</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li ><a href="contact-us.html">Cadastre-se</a></li> 
+                    </ul>        
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <section>
+    <div class="main-login">
+      <div class="left-login">
+        <h1>Bem-Vindo <br>De Volta</h1>
+        <p> Acesse sua conta agora mesmo</p>
+      </div>
+      <div class="right-login">
+        
+        <div class="card-login">
+          <h1>Crie Sua Conta</h1>
+          <div class="textfield">
+            <label for="usuario">Usuário</label>
+            <input type="text" name="usuario" placeholder="Usuário">
+          </div>
+          <div class="textfield">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" placeholder="E-mail">
+          </div>
+          <div class="textfield">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" placeholder="Senha">
+          </div>
+          <button class="orange-button">Voltar</button>
+          <button type="submit" class="green-button">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/swiper.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        var interleaveOffset = 0.5;
+
+      var swiperOptions = {
+        loop: true,
+        speed: 1000,
+        grabCursor: true,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        keyboardControl: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        on: {
+          progress: function() {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+              var slideProgress = swiper.slides[i].progress;
+              var innerOffset = swiper.width * interleaveOffset;
+              var innerTranslate = slideProgress * innerOffset;
+              swiper.slides[i].querySelector(".slide-inner").style.transform =
+                "translate3d(" + innerTranslate + "px, 0, 0)";
+            }      
+          },
+          touchStart: function() {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+              swiper.slides[i].style.transition = "";
+            }
+          },
+          setTransition: function(speed) {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+              swiper.slides[i].style.transition = speed + "ms";
+              swiper.slides[i].querySelector(".slide-inner").style.transition =
+                speed + "ms";
+            }
+          }
+        }
+      };
+
+      var swiper = new Swiper(".swiper-container", swiperOptions);
+    </script>
+
+  </body>
+</html>

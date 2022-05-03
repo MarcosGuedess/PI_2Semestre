@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900");
+/*
+1VH É = 10PX
+
+100VH =  1000PX
+
+*/
+
+
+body {
+margin: 0;
+}
+
+.main-login{
+   width: 100vw; 
+   height: 100vh;
+   background: wheat ;
+   display: flex;
+   justify-content: center; /*ajustar no eixo "x"*/
+    align-items: center; /*ajustar no eixo "y"*/
+}
+
+.left-login {
+    width: 50vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column ;
+}
+
+.left-login > h1 {
+    font-size: 3vh;
+    font-family: "Popins", sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.right-login {
+    width: 50vh;
+    height: 100vh;
+    display: Flex;
+    justify-content: center;
+    align-items: center; 
+}
+/* 60% é do card que é 50vh*/
+.card-login {
+    width: 80%;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    padding: 30px 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px black;
+}
+
+.card-login > h1 {
+    font-size: xx-large;
+    font-family: 'Popins', sans-serif;
+    font-weight: 800;
+    align-items: flex-start;
+    color: rgb(78, 180, 83);
+    margin-bottom: 100px;
+}
+
+.textfield {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px 0px;
+    
+}
+
+.textfield > input {
+    width: 100%;
+    border: None;
+    border-radius: 10px;
+    padding: 15px;
+    background: whitesmoke;
+    margin-top: 5px;
+    font-size: 12pt;
+    
+    outline: None;
+    box-sizing: border-box;
+}
+
+.textfield > label {
+    margin-bottom: 10px; 
+}
+ .textfield > input::placeholder {
+    color: rgb(78, 180, 83);
+}
+
+.orange-button {
+    font-size: 14px;
+    color: #fff;
+    background-color: #ff511a;
+    padding: 10px 20px !important;
+    display: inline-block;
+    border-radius: 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+    height: auto;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+    transition: all .3s;
+}
+
+.green-button {
+    font-size: 14px;
+    color: #fff;
+    background-color: rgb(78, 180, 83);
+    padding: 10px 20px !important;
+    display: inline-block;
+    border-radius: 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+    height: auto;
+    line-height: 25px;
+    letter-spacing: 0.5px;
+    transition: all .3s;
+    padding-left: 0px;
+}
