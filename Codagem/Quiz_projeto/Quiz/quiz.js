@@ -23,6 +23,10 @@ let c = document.querySelector('#c')
 //article class questoes
 let articleImagem   = document.querySelector('.imagem')
 let articleQuestoes = document.querySelector('.questoes')
+let articleOpcao    = document.querySelector('.opcao')
+let articleOpc      = document.querySelector('.opc')
+articleOpcao.style.display = 'none'
+articleOpc.style.display   = 'none'
 
 //ol li com alternativas
 let alternativas = document.querySelector('#alternativas')
@@ -83,7 +87,7 @@ const q5 = {
     pergunta     : "No dia a dia, precisamos:",
     alternativaA : "Reutilizar lixo orgânico",
     alternativaB : "Separar o lixo para reciclagem",
-    alternativaC : "Comprar somente produtos com o selo greenwashing",
+    alternativaC : "Comprar produtos com selo greenwashing",
     correta      : "Separar o lixo para reciclagem",
 }
 
@@ -237,6 +241,8 @@ function fimDoJogo(){
 
     //Esconder article
     articleQuestoes.style.display = 'none'
+    articleOpcao.style.display = 'block'
+    articleOpc.style.display   = 'block'
 
     //setTimeout(function(){
         ///pontos = 0 //Zerar placar
