@@ -9,9 +9,7 @@ if(!isset($_POST['casa1']) || !isset($_POST['casa2']) || !isset($_POST['casa3'])
   exit;
 }
 
-$soma = $_SESSION['soma'];
-$_SESSION['soma'] = $soma + $_POST['casa1'] + ($_POST['casa2'] * 38) + $_POST['casa3'] + ($_POST['casa4'] * 22.674);
-
+$_SESSION['soma_casa'] = $_POST['casa1'] + ($_POST['casa2'] * 38) + $_POST['casa3'] + ($_POST['casa4'] * 22.674);
 
 ?>
 

@@ -9,7 +9,7 @@ if(!isset($_POST['gaso1']) || !isset($_POST['gaso2']) || !isset($_POST['gaso4'])
   exit;
 }
 
-$_SESSION['soma'] = ($_POST['gaso1'] * 2.28) + ($_POST['gaso2'] * 2.7) + ($_POST['gaso4'] * 1.51);
+$_SESSION['soma_gaso'] = ($_POST['gaso1'] * 2.28) + ($_POST['gaso2'] * 2.7) + ($_POST['gaso4'] * 1.51);
 
 ?>
 

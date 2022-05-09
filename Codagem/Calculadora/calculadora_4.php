@@ -9,8 +9,8 @@ if(!isset($_POST['animal1']) || !isset($_POST['animal2']) || !isset($_POST['anim
   exit;
 }
 
-$soma = $_SESSION['soma'];
-$_SESSION['soma'] = $soma + $_POST['animal1'] + $_POST['animal2'] + $_POST['animal3'] + $_POST['animal4'];
+
+$_SESSION['soma_lixo'] = $_POST['animal1'] + $_POST['animal2'] + $_POST['animal3'] + $_POST['animal4'];
 
 
 ?>

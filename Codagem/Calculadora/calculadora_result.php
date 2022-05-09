@@ -1,5 +1,12 @@
 <?php
 session_start();
+
+$gaso = $_SESSION['soma_gaso'];
+$casa = $_SESSION['soma_casa'];
+$lixo = $_SESSION['soma_lixo'];
+
+$soma = $gaso + $casa + $lixo;
+
 header('Cache-Control: no cache');
 
 if(!isset($_POST['lixo1']) || !isset($_POST['lixo2'])){
@@ -7,11 +14,46 @@ if(!isset($_POST['lixo1']) || !isset($_POST['lixo2'])){
   exit;
 }
 
-if(!isset($_SESSION['soma'])){
+if(!isset($_SESSION['soma_gaso']) || !isset($_SESSION['soma_casa']) || !isset($_SESSION['soma_lixo'])){
   header("location: calculadora_1.php");
   exit;
 }
 
+$servername = "localhost:3306";
+$username = "root";
+$password = "";
+$dbname = "pi_2semestre";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$id=1;
+
+$select = "SELECT resultado_calc from Pontuacao WHERE id = $id";
+
+$result_select = $conn->query($select);
+
+if ($result_select) {
+  while($row = $result_select->fetch_assoc()) {
+    $valores_anteriores = $row["resultado_calc"];
+  }
+} else {
+  echo "0 results";
+}
+
+
+$sql = "UPDATE Pontuacao SET resultado_calc = $soma + $valores_anteriores where id = $id";
+
+if (mysqli_query($conn, $sql)) {
+  echo "";
+} else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +84,7 @@ if(!isset($_SESSION['soma'])){
                             <img src="images_calculadora/planeta.png" width=120 height=120>
                         </div>
                         <div class="CO2_total">
-                            <h4><?php echo $_SESSION['soma']; ?> kg</h4>
+                            <h4><?php echo $soma ?> kg</h4>
                         </div>
                     </div>
 
