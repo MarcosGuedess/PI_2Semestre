@@ -227,6 +227,19 @@ function fimDoJogo(){
     let pont = ''
     pontos == 0 ? pont = 'ponto' : pont = 'pontos'
 
+    //aviso.textContent =  pontos
+    //var db = openDatabase("127.0.0.1", "root", "pi_2semestre", "");
+
+    //function salvar_pontos(){
+        //var pontos_quiz = document.getElementsByName('pontos').value;
+        //db.transaction(function(guardar){
+            //guardar.executeSql("INSERT INTO Pontuacao (pontuacao_quiz) values (?)", [pontos]);
+        //})
+    //}
+
+    //salvar_pontos()
+    $somar = pontos;
+
     pergunta.textContent = "Parabéns! Você conseguiu  " + pontos + " " + pont
     aviso.textContent = "Parabéns! Você conseguiu " + pontos + " " + pont
 
