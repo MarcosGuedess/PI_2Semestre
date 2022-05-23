@@ -19,7 +19,7 @@ $_SESSION['soma_casa'] = $_POST['casa1'] + ($_POST['casa2'] * 38) + $_POST['casa
   <head>
     <meta charset="utf-8">
     <title>Calculadora de CO²</title>
-    <link rel="stylesheet" href="estilo_calculadora.css">
+    <link rel="stylesheet" href="./css/estilo_calculadora.css">
   </head>
 
   <body class="body_calculadora">

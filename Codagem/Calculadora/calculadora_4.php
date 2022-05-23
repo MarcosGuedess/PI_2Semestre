@@ -21,7 +21,7 @@ $_SESSION['soma_lixo'] = $_POST['animal1'] + $_POST['animal2'] + $_POST['animal3
   <head>
     <meta charset="utf-8">
     <title>Calculadora de CO²</title>
-    <link rel="stylesheet" href="estilo_calculadora.css">
+    <link rel="stylesheet" href="./css/estilo_calculadora.css">
   </head>
 
   <body class="body_calculadora">

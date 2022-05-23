@@ -1,43 +1,22 @@
 <?php
-    $exp = 80;
-?>
 
-<?php
-$servername = "localhost:3306";
-$username = "root";
-$password = "";
-$dbname = "pi_2semestre";
+require '../ClassDatabase.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$id = 1;
 
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+$perfil = new BancoDados;
 
-$id=1;
+$row = $perfil->select_user($id);
 
-$sql = "SELECT u.id as id, u.nome as nome, u.foto_perfil as foto, 
-        p.pontuacao_quiz as pont, p.resultado_calc as calc, 
-        p.atividades_completas as ativd, p.nivel as niv 
-        FROM usuario u, pontuacao p 
-        WHERE u.id = p.id_usuario";
-
-$result = $conn->query($sql);
-
-if ($result) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    $nome_user = $row["nome"];
-    $foto_user = $row["foto"];
-    $pontuacao_quiz = $row["pont"];
-    $calculo = $row["calc"];
-    $nivel = $row["niv"];
-    $atividade = $row["ativd"];
-  }
-} else {
-  echo "0 results";
-}
-$conn->close();
+$nome_user = $row["nome"];
+$foto_user = $row["foto"];
+$pontuacao_quiz = $row["pont"];
+$calculo = $row["calc"];
+$nivel = $row["niv"];
+$expe = $row["expe"];
+$arvores = $row["arvores"];
+$cidade = $row["cidade"];
+$pais = $row["pais"];
 
 ?>
 
@@ -47,7 +26,7 @@ $conn->close();
   <head>
     <meta charset="utf-8">
     <title>Perfil de <?php echo $nome_user; ?> </title>
-    <link rel="stylesheet" href="estilo_perfil.css">
+    <link rel="stylesheet" href="./css/estilo_perfil.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
@@ -58,23 +37,27 @@ $conn->close();
       <div class="mx-auto" style="background-color: #212741;">
           <br><br>
           <div class="user_photo"> 
-            <img src="<?php echo $foto_user; ?>" width=20% height=20% class="rounded-circle" alt="Imagem de perfil.">
+            <img src="./images_perfil/<?php echo $foto_user; ?>.png" width=20% height=20% class="rounded-circle" alt="Imagem de perfil.">
           </div>
           <br>
           <div class="text-center">
               <h3 style="color: white;"><?php echo $nome_user; ?></h3>
-              <h5 style="color: white;">Nível <?php echo $nivel; ?></h4>
+              <h6 style="color: white;"><?php echo $cidade?>, <?php echo $pais ?></h4>
               <br>
+              <h5 style="color: white;">Nível <?php echo $nivel; ?></h4>
+
               <div class="col-md-6 offset-md-3"> 
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<?php echo $exp ?>" aria-valuemin="0" aria-valuemax="100" style=" background-color: #ff511a; width: 75%"></div>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<?php echo $expe ?>" aria-valuemin="0" aria-valuemax="100" style=" background-color: #ff511a; width: 75%"></div>
+                </div>  
+                <br>
+                <div class="row justify-content-md-center">
+                  <a href="./atualizar_perfil.php" class="btn btn-light"> Editar Perfil</a>
+                  <a href="#" class="btn btn-light" style="margin-left: 2%"> Sair</a>
+                </div>
               </div>
           </div>
           <br><br>
-          <div>
-
-
-          </div>
       </div>
 
       <div class="container" style="background-color: #ff511a;">
@@ -85,10 +68,10 @@ $conn->close();
           <div class="col">
             <div class="card text-center" style="width: 100%;">
               <div class="card-body">
-                <img src="images_calculadora/quiz.png" width=30% height=30%><br><br>
+                <img src="./images_perfil/quiz.png" width=30% height=30%><br><br>
                 <h5 class="card-title">Pontuação do quiz</h5>
                 <p class="card-text"><?php echo $pontuacao_quiz?> pontos</p>
-                <a href="#" class="btn btn-primary"> Acessar Quiz</a>
+                <a href="../Quiz_projeto/Index_quiz.php" class="btn btn-primary"> Acessar Quiz</a>
               </div>
             </div>
           </div><br><br>
@@ -96,10 +79,10 @@ $conn->close();
           <div class="col">
             <div class="card text-center" style="width: 100%;">
               <div class="card-body">
-                <img src="images_calculadora/arvore_1.png" width=30% height=30%><br><br>
+                <img src="./images_perfil/arvore_1.png" width=30% height=30%><br><br>
                 <h5 class="card-title">Árvores plantadas</h5>
-                <p class="card-text"><?php echo $atividade?></p>
-                <a href="#" class="btn btn-primary">Atualizar</a>
+                <p class="card-text"><?php echo $arvores?></p>
+                <a href="./atualizar_arvore.php" class="btn btn-primary">Atualizar</a>
               </div>
             </div>
           </div><br><br>
@@ -107,10 +90,10 @@ $conn->close();
           <div class="col">
             <div class="card text-center" style="width: 100%;">
               <div class="card-body">
-                <img src="images_calculadora/co22.png" width=30% height=30%><br><br>
+                <img src="./images_perfil/co22.png" width=30% height=30%><br><br>
                 <h5 class="card-title">Quantidade de CO²</h5>
                 <p class="card-text"><?php echo $calculo?> kgCO²</p>
-                <a href="#" class="btn btn-primary">Calculadora</a>
+                <a href="../Calculadora/calculadora_1.php" class="btn btn-primary">Calculadora</a>
               </div>
             </div>
           </div>
