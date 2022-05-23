@@ -7,8 +7,6 @@ $lixo = $_SESSION['soma_lixo'];
 
 $soma = $gaso + $casa + $lixo;
 
-header('Cache-Control: no cache');
-
 if(!isset($_POST['lixo1']) || !isset($_POST['lixo2'])){
   header("location: calculadora_1.php");
   exit;
@@ -37,13 +35,12 @@ $select = "SELECT resultado_calc from Pontuacao WHERE id = $id";
 $result_select = $conn->query($select);
 
 if ($result_select) {
-  while($row = $result_select->fetch_assoc()) {
-    $valores_anteriores = $row["resultado_calc"];
-  }
+  $row = $result_select->fetch_assoc()
 } else {
   echo "0 results";
 }
 
+$valores_anteriores = $row["resultado_calc"];
 
 $sql = "UPDATE Pontuacao SET resultado_calc = $soma + $valores_anteriores where id = $id";
 
@@ -62,7 +59,7 @@ $conn->close();
   <head>
     <meta charset="utf-8">
     <title>Calculadora de CO²</title>
-    <link rel="stylesheet" href="estilo_calculadora.css">
+    <link rel="stylesheet" href="./css/estilo_calculadora.css">
   </head>
 
   <body class="body_calculadora">
