@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$soma = $somar;
+$soma = + 50;
 
 header('Cache-Control: no cache');
 
