@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+require '../ClassDatabase.php';
+
+$perfil = new BancoDados;
+
 $gaso = $_SESSION['soma_gaso'];
 $casa = $_SESSION['soma_casa'];
 $lixo = $_SESSION['soma_lixo'];
@@ -17,40 +21,14 @@ if(!isset($_SESSION['soma_gaso']) || !isset($_SESSION['soma_casa']) || !isset($_
   exit;
 }
 
-$servername = "localhost:3306";
-$username = "root";
-$password = "";
-$dbname = "pi_2semestre";
+$id = 1;
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$select = $perfil->select_user($id);
 
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+$valores_anteriores = $select["calc"];
 
-$id=1;
+$result = $perfil-> update_calculadora($soma, $id, $valores_anteriores)
 
-$select = "SELECT resultado_calc from Pontuacao WHERE id = $id";
-
-$result_select = $conn->query($select);
-
-if ($result_select) {
-  $row = $result_select->fetch_assoc()
-} else {
-  echo "0 results";
-}
-
-$valores_anteriores = $row["resultado_calc"];
-
-$sql = "UPDATE Pontuacao SET resultado_calc = $soma + $valores_anteriores where id = $id";
-
-if (mysqli_query($conn, $sql)) {
-  echo "";
-} else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
-
-$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +59,7 @@ $conn->close();
                             <img src="images_calculadora/planeta.png" width=120 height=120>
                         </div>
                         <div class="CO2_total">
-                            <h4><?php echo $soma ?> kg</h4>
+                            <h4><?php echo $result ?> kg</h4>
                         </div>
                     </div>
 
@@ -92,7 +70,7 @@ $conn->close();
 
     </div>
 
-    <a href="perfil_usuario.php">
+    <a href="../perfil/perfil_usuario.php">
       <button class="button_ok">
         OK!
       </button>
