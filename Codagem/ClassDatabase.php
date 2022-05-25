@@ -64,7 +64,7 @@ class BancoDados{
         $sql = "UPDATE Pontuacao SET resultado_calc = $soma + $select where id = $id";
 
         if (mysqli_query($this->conn, $sql)) {
-            echo "Atualização feita com sucesso";
+            return $soma + $select;
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
@@ -94,7 +94,7 @@ class BancoDados{
             echo '<option value="wonderwoman_1">Mulher Maravilha</option>
             <option value="superman_1">Super homem</option>';
         } if ($nivel >= 5) {
-            echo '<option value="spiderman_1">Homem aranha</option>
+            echo '<option value="spider_man_1">Homem aranha</option>
             <option value="flash_1">Flash</option>
             <option value="green_greenlantern_1">Lanterna verde</option>';
         } if ($nivel >= 10) {
@@ -117,5 +117,50 @@ class BancoDados{
             echo '<option value="batman">Batman - Rosto</option>';
         }
     }
+
+    public function conquistas_nivel($nivel){
+        if ($nivel >= 1) {
+            echo '<div class="col"><figure class="figure">
+                    <img src="./images_perfil/medalha.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <p class="text-center">Nova conta!</p>
+                </figure></div>';
+        } if ($nivel >= 5) {
+            echo '<div class="col"><figure class="figure">
+                    <img src="./images_perfil/medalha.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <p class="text-center"> Nível 5! </p>
+                </figure></div>';
+
+        } if ($nivel >= 10) {
+            echo '<div class="col"><figure class="figure">
+                    <img src="./images_perfil/medalha.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <p class="text-center"> Consciente! </p>
+                </figure></div>';
+
+        } if ($nivel >= 15) {
+            echo '<div class="col"><figure class="figure">
+                    <img src="./images_perfil/medalha.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <p class="text-center"> Nível 15! </p>
+                </figure></div>';
+
+        } if ($nivel >= 25) {
+            echo '<div class="col"><figure class="figure">
+                    <img src="./images_perfil/medalha.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <p class="text-center"> Vivendo e aprendendo! </p>
+                </figure></div>';
+
+        } if ($nivel >= 30) {
+            echo '<div class="col"><figure class="figure">
+                    <img src="./images_perfil/medalha.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <p class="text-center"> Herói! </p>
+                </figure></div>';
+
+        } if ($nivel >= 35) {
+            echo '<div class="col"><figure class="figure">
+                    <img src="./images_perfil/medalha.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <p class="text-center"> Nível 35! </p>
+                </figure></div>';
+        }
+    }
+
 }
 ?>
