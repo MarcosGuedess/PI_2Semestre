@@ -20,7 +20,7 @@ $Banco = new BancoDados;
   </head>
   <body>
     <div class="container text-center" style="margin-top: 10rem;margin-bottom: 10rem;">
-        <div class="container" style="background-color: white">
+        <div class="container">
         <br><br>  
         <h1 class="text-center"> <?php echo $Banco->update_arvore($id, $arvorequant); ?></h1>
         <br>

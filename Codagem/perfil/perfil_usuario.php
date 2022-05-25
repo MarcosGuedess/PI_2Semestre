@@ -18,6 +18,7 @@ $arvores = $row["arvores"];
 $cidade = $row["cidade"];
 $pais = $row["pais"];
 
+
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +57,7 @@ $pais = $row["pais"];
                   <a href="#" class="btn btn-light" style="margin-left: 2%"> Sair</a>
                 </div>
               </div>
-          </div>
+          </div>    
           <br><br>
       </div>
 
@@ -68,7 +69,7 @@ $pais = $row["pais"];
           <div class="col">
             <div class="card text-center" style="width: 100%;">
               <div class="card-body">
-                <img src="./images_perfil/quiz.png" width=30% height=30%><br><br>
+                <img src="./images_perfil/icon_quiz2.png" width=50% height=50%><br><br>
                 <h5 class="card-title">Pontuação do quiz</h5>
                 <p class="card-text"><?php echo $pontuacao_quiz?> pontos</p>
                 <a href="../Quiz_projeto/Index_quiz.php" class="btn btn-primary"> Acessar Quiz</a>
@@ -79,7 +80,7 @@ $pais = $row["pais"];
           <div class="col">
             <div class="card text-center" style="width: 100%;">
               <div class="card-body">
-                <img src="./images_perfil/arvore_1.png" width=30% height=30%><br><br>
+                <img src="./images_perfil/icon_arvores2.png" width=50% height=50%><br><br>
                 <h5 class="card-title">Árvores plantadas</h5>
                 <p class="card-text"><?php echo $arvores?></p>
                 <a href="./atualizar_arvore.php" class="btn btn-primary">Atualizar</a>
@@ -90,7 +91,7 @@ $pais = $row["pais"];
           <div class="col">
             <div class="card text-center" style="width: 100%;">
               <div class="card-body">
-                <img src="./images_perfil/co22.png" width=30% height=30%><br><br>
+                <img src="./images_perfil/icon_co22.png" width=50% height=50%><br><br>
                 <h5 class="card-title">Quantidade de CO²</h5>
                 <p class="card-text"><?php echo $calculo?> kgCO²</p>
                 <a href="../Calculadora/calculadora_1.php" class="btn btn-primary">Calculadora</a>
@@ -98,6 +99,22 @@ $pais = $row["pais"];
             </div>
           </div>
         </div><br><br>
+
+
+
+
+        <div class="container" style="background-color: white; width: 100%; margin-top: 2%;">
+                <div class="card-header" style="width: 100%;">
+                  <h1 class="text-center"> Conquistas </h1>
+                </div><br>
+            
+              
+              <div class="row">
+                <?php echo $perfil->conquistas_nivel($nivel); ?>
+              </div>    <br>
+        </div><br><br>
+
+
       </div>
 
       
@@ -108,4 +125,3 @@ $pais = $row["pais"];
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
-

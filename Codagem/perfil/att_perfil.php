@@ -30,7 +30,7 @@ $Banco = new BancoDados;
   </head>
   <body>
     <div class="container text-center" style="margin-top: 10rem;margin-bottom: 10rem;">
-        <div class="container" style="background-color: white">
+        <div class="container">
         <br><br>  
         <h1 class="text-center"> <?php echo $Banco->update_perfil($id, $name_user, $contato_updt, $cidade_updt, $pais_updt, $perfil_pic); ?></h1>
         <br>
