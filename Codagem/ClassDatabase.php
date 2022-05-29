@@ -5,7 +5,7 @@ class BancoDados{
     private $password = '';
     private $dbname = "pi_2semestre";
     private $conn;
-
+    
     public function __construct(){
         $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->dbname);
         if (!$this->conn) {
@@ -18,28 +18,30 @@ class BancoDados{
     }
 
     public function adicionar_user($username, $passw, $nome, $contato, $cidade, $pais, $foto_perfil){
-        $sql = "INSERT INTO Usuario ( 'username', 'passw', 'nome', 'contato', 'cidade', 'pais', 'foto_perfil') ";
-        $sql = $sql."VALUES ('".$username."', '".$passw."', ".$nome.", '".$contato ."', '".$cidade."', '".$pais."', '".$foto_perfil."')";
+        $sql = "INSERT INTO usuario (username, passw, nome, contato, cidade, pais, foto_perfil) ";
+        $sql = $sql."VALUES ('".$username."', '".$passw."', '".$nome."', '".$contato ."', '".$cidade."', '".$pais."', '".$foto_perfil."')";
         if (mysqli_query($this->conn, $sql)) {
-            echo "Cadastro feito com sucesso";
+            $print = "Cadastro feito com sucesso";
+            return $print;
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            $print = "Error: " . $sql . "<br>" . mysqli_error($this->conn);
+            return $print;
         }
     }
 
-
+    
     public function login_site($user, $pass){ 
-        $sql = "SELECT id FROM Usuario WHERE username ='$user' AND senha = '$passw'";
+        $sql = "SELECT id FROM Usuario WHERE username = ('".$user."') AND ('".$pass ."')";
         if (mysqli_query($this->conn, $sql)) {
             $result = mysqli_query($this->conn, $sql);
             if (mysqli_num_rows($result) <= 0){
-                return false;
+                return "nenhum id";
             }else{
                 $row = $result->fetch_assoc();
                 return $row['id'];
             }
         }else {
-            return false;
+            return "Nenhum id encontrado";
         }
     }
 
