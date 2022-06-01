@@ -27,22 +27,60 @@ CREATE TABLE Pontuacao(
 	FOREIGN KEY (id_usuario) REFERENCES Usuario(id)
 );
 
+# PROCEDURE Add usuário
 
-INSERT INTO usuario(username,passw,nome,contato,cidade,pais,foto_perfil)
-VALUES ('Antonio', 'senha12345','Antonio Candioto', '19971478359','Pirassununga','Brasil','/images_perfil/default.jpg');
+delimiter $$
+CREATE OR REPLACE PROCEDURE add_usuario(IN newuser VARCHAR(30), IN newsenha VARCHAR(30), IN nome_usuario VARCHAR(30), IN telefone CHAR(11), IN city VARCHAR(30), 
+IN country VARCHAR(30))
+BEGIN
+	INSERT INTO usuario (username, passw, nome, contato, cidade, pais, foto_perfil)
+	VALUES (newuser,newsenha,nome_usuario,telefone,city,country,"default.jpg");
+END $$
+delimiter;
 
-SELECT * FROM usuario;
 
-INSERT INTO Pontuacao(id_usuario,pontuacao_quiz,resultado_calc,arvores,nivel,expe)
-VALUES (1, 20,50.6,6,2, 62);
+# PROCEDURE Select ID
 
-SELECT * FROM pontuacao;
+delimiter $$
+CREATE OR REPLACE PROCEDURE login_usuario(IN user_log VARCHAR(30), IN pass_log VARCHAR(30))
+BEGIN
+	SELECT id FROM usuario WHERE username = user_log AND passw = pass_log;
+END $$
+delimiter;
 
-SELECT u.id, u.nome, u.foto_perfil, p.pontuacao_quiz,p.resultado_calc,p.expe,p.nivel 
+#CALL login_usuario("Antonio","senha12345");
+
+
+# PROCEDURE Select usuário
+
+delimiter $$
+CREATE OR REPLACE PROCEDURE select_usuario(IN id_select INT)
+BEGIN
+	SELECT u.id as id, u.nome as nome, u.foto_perfil as foto, 
+        u.cidade as cidade,u.pais as pais, u.contato as contato, p.pontuacao_quiz as pont, p.resultado_calc as calc, 
+        p.expe as expe, p.arvores as arvores, p.nivel as niv 
         FROM usuario u, pontuacao p 
         WHERE u.id = p.id_usuario
-        
+        AND u.id = id_select;
+END $$
+delimiter;
 
-UPDATE usuario SET foto_perfil = 'images_perfil/default.png' WHERE id = 1
+#CALL select_usuario(1);
 
-UPDATE usuario SET resultado_calc = 40 WHERE id = 1
+
+#TRIGGER START PONTUACAO
+
+DELIMITER $$
+ 
+CREATE OR REPLACE TRIGGER start_pontuacao AFTER INSERT ON usuario
+FOR EACH ROW
+BEGIN
+	INSERT INTO pontuacao (id_usuario,pontuacao_quiz,resultado_calc,nivel,expe,arvores)
+	VALUES (NEW.id, 0,0,1,0,0);
+END $$
+ 
+DELIMITER ;
+
+
+
+
