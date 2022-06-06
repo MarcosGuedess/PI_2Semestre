@@ -77,7 +77,7 @@ $pais = $row["pais"];
                 <img src="./images_perfil/icon_quiz2.png" width=50% height=50%><br><br>
                 <h5 class="card-title">Pontuação do quiz</h5>
                 <p class="card-text"><?php echo $pontuacao_quiz?> pontos</p>
-                <a href="../Quiz_projeto/Index_quiz.php" class="btn btn-primary"> Acessar Quiz</a>
+                <a href="../quiz_model/index.php" class="btn btn-primary"> Acessar Quiz</a>
               </div>
             </div>
           </div><br><br>
