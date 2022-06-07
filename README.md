@@ -28,7 +28,7 @@ O OurBurden é um site onde o usuário poderá se cadastrar e ter acesso a um pe
 <li> Registrador de árvores plantadas </li>
 <li> Calculadora de CO2 </li>
     
-<h3> Sistema de níveis </h3>
+<h3> Sistema de níveis e recompensas</h3>
 
 O site possui também um sistema de niveis, então quanto mais tarefas realizadas, mais experiência o usuário vai conseguir e, consequentemente, seu nível aumentará. Com o aumentar do nível, o usuário terá acesso a novas fotos de perfil (com temática de heróis) e conquistas que serão encontradas ao final de seu perfil.
 
@@ -37,7 +37,6 @@ O site possui também um sistema de niveis, então quanto mais tarefas realizada
 
     
 <h2> Desenvolvimento </h2>
-
 
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
