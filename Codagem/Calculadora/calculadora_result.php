@@ -1,16 +1,33 @@
 <?php
 session_start();
-header('Cache-Control: no cache');
+
+require '../ClassDatabase.php';
+
+$perfil = new BancoDados;
+
+$gaso = $_SESSION['soma_gaso'];
+$casa = $_SESSION['soma_casa'];
+$lixo = $_SESSION['soma_lixo'];
+
+$soma = $gaso + $casa + $lixo;
 
 if(!isset($_POST['lixo1']) || !isset($_POST['lixo2'])){
   header("location: calculadora_1.php");
   exit;
 }
 
-if(!isset($_SESSION['soma'])){
+if(!isset($_SESSION['soma_gaso']) || !isset($_SESSION['soma_casa']) || !isset($_SESSION['soma_lixo'])){
   header("location: calculadora_1.php");
   exit;
 }
+
+$id = 1;
+
+$select = $perfil->select_user($id);
+
+$valores_anteriores = $select["calc"];
+
+$result = $perfil-> update_calculadora($soma, $id, $valores_anteriores)
 
 ?>
 
@@ -20,7 +37,7 @@ if(!isset($_SESSION['soma'])){
   <head>
     <meta charset="utf-8">
     <title>Calculadora de CO²</title>
-    <link rel="stylesheet" href="estilo_calculadora.css">
+    <link rel="stylesheet" href="./css/estilo_calculadora.css">
   </head>
 
   <body class="body_calculadora">
@@ -42,7 +59,7 @@ if(!isset($_SESSION['soma'])){
                             <img src="images_calculadora/planeta.png" width=120 height=120>
                         </div>
                         <div class="CO2_total">
-                            <h4><?php echo $_SESSION['soma']; ?> kg</h4>
+                            <h4><?php echo $result ?> kg</h4>
                         </div>
                     </div>
 
@@ -53,7 +70,7 @@ if(!isset($_SESSION['soma'])){
 
     </div>
 
-    <a href="perfil_usuario.php">
+    <a href="../perfil/perfil_usuario.php">
       <button class="button_ok">
         OK!
       </button>
