@@ -1,9 +1,9 @@
 <?php
-require '../ClassDatabase.php';
+require '../Classes/ClassDatabase.php';
 
 $perfil = new BancoDados;
 
-require '../ClassSession.php';
+require '../Classes/ClassSession.php';
 
 $ss = new Session_User();
 

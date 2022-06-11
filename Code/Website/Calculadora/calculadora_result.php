@@ -1,20 +1,18 @@
 <?php
 
-require '../ClassDatabase.php';
-
-require '../ClassSession.php';
+require '../Classes/ClassDatabase.php';
+require '../Classes/ClassSession.php';
 
 $ss = new Session_User();
+$perfil = new BancoDados();
 
 $id = $ss->check_loggedin();
-
-$perfil = new BancoDados;
 
 $gaso = $_SESSION['soma_gaso'];
 $casa = $_SESSION['soma_casa'];
 $lixo = $_SESSION['soma_lixo'];
 
-$soma = $gaso + $casa + $lixo;
+$soma_tudo = $gaso + $casa + $lixo;
 
 if(!isset($_POST['lixo1']) || !isset($_POST['lixo2'])){
   header("location: calculadora_1.php");
@@ -27,11 +25,13 @@ if(!isset($_SESSION['soma_gaso']) || !isset($_SESSION['soma_casa']) || !isset($_
 }
 
 $select = $perfil->select_user($id);
-$valores_anteriores = $select["calc"];
 
-$new_pontuacao = $soma + $valores_anteriores;
+$perfil->__destruct();
+$perfil->__construct();
 
-$result = $perfil-> update_calculadora($new_pontuacao, $id)
+$new_pontuacao = $soma_tudo + $select['calc'];
+
+$result = $perfil->update_calculadora($new_pontuacao, $id)
 
 ?>
 

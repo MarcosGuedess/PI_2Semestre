@@ -1,10 +1,10 @@
 <?php
 
-require '../ClassDatabase.php';
+require '../Classes/ClassDatabase.php';
 
 $perfil = new BancoDados;
 
-require '../ClassSession.php';
+require '../Classes/ClassSession.php';
 
 $ss = new Session_User();
 
@@ -21,8 +21,6 @@ $expe = $row["expe"];
 $arvores = $row["arvores"];
 $cidade = $row["cidade"];
 $pais = $row["pais"];
-
-
 
 ?>
 
@@ -54,7 +52,7 @@ $pais = $row["pais"];
 
               <div class="col-md-6 offset-md-3"> 
                 <div class="progress">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<?php echo $expe ?>" aria-valuemin="0" aria-valuemax="100" style=" background-color: #ff511a; width: 75%"></div>
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="<?php echo $expe ?>" aria-valuemin="0" aria-valuemax="100" style=" background-color: #ff511a; width: <?php echo $expe ?>%"></div>
                 </div>  
                 <br>
                 <div class="row justify-content-md-center">
