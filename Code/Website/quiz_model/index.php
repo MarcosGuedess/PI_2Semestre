@@ -1,45 +1,22 @@
 <?php
-session_start();
-
 $soma = +50;
 
-header('Cache-Control: no cache');
+require '../Classes/ClassDatabase.php';
+require '../Classes/ClassSession.php';
 
-$servername = "localhost:3306";
-$username = "root";
-$password = "";
-$dbname = "pi_2semestre";
+$ss = new Session_User();
+$perfil = new BancoDados();
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$id = $ss->check_loggedin();
 
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+$select = $perfil->select_user($id);
 
-$id=1;
+$perfil->__destruct();
+$perfil->__construct();
 
-$select = "SELECT pontuacao_quiz from Pontuacao WHERE id = $id";
+$new_pontuacao = $soma + $select['pont'];
 
-$result_select = $conn->query($select);
-
-if ($result_select) {
-  while($row = $result_select->fetch_assoc()) {
-    $valores_anteriores = $row["pontuacao_quiz"];
-  }
-} else {
-  echo "0 results";
-}
-
-
-$sql = "UPDATE Pontuacao SET pontuacao_quiz = $soma + $valores_anteriores where id = $id";
-
-if (mysqli_query($conn, $sql)) {
-  echo "";
-} else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
-
-$conn->close();
+$result = $perfil->update_quiz($new_pontuacao, $id)
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +78,7 @@ $conn->close();
                 Jogar novamente
             </article>
 
-            <article class='opc' onclick="location.href='../index.php'">
+            <article class='opc' onclick="location.href='../perfil/perfil_usuario.php'">
                 Sair
             </article>
             

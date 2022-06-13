@@ -83,7 +83,6 @@ END $$
 delimiter;
 
 
-
 #TRIGGER START PONTUACAO
 
 DELIMITER $$

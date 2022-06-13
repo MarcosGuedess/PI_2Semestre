@@ -1,7 +1,7 @@
 <?php
 
-require 'ClassDatabase.php';
-require 'ClassSession.php';
+require './Classes/ClassDatabase.php';
+require './Classes/ClassSession.php';
 
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -30,9 +30,9 @@ $ss->check_session($id);
 <body class="cadastrar">
     <header>
         <ul>
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>Sobre Nós</li></a>
-            <a href="#"><li>Acervos</li></a>
+            <a href="./html/index.html"><li>Home</li></a>
+            <a href="./html/doacao.html"><li>Doação</li></a>
+            <a href="./html/login.html"><li>Login</li></a>
             <a href="./html/cadastro.html" id="title"><li>Cadastre-se</li></a>
         </ul>
     </header>

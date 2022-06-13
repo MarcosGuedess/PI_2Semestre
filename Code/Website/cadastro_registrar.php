@@ -1,6 +1,6 @@
 <?php
 
-require 'ClassDatabase.php';
+require './Classes/ClassDatabase.php';
 
 $name = $_POST['name'];
 $username = $_POST['username'];
@@ -31,11 +31,10 @@ $login = $db->login_site($username, $password);
 <body class="cadastrar">
     <header>
         <ul>
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>Calculadora De CO2</li></a>
-            <a href="#"><li>Sobre Nós</li></a>
-            <a href="#"><li>Acervos</li></a>
-            <a href="#" id="title"><li>Cadastre-Se</li></a>
+            <a href="./html/index.html"><li>Home</li></a>
+            <a href="./html/doacao.html"><li>Doação</li></a>
+            <a href="./html/login.html"><li>Login</li></a>
+            <a href="./html/cadastro.html" id="title"><li>Cadastre-se</li></a>
         </ul>
     </header>
     <main>

@@ -1,10 +1,10 @@
 <?php
-require '../ClassDatabase.php';
+require '../Classes/ClassDatabase.php';
 $id = 1;
 
 $perfil = new BancoDados;
 
-require '../ClassSession.php';
+require '../Classes/ClassSession.php';
 
 $ss = new Session_User();
 
@@ -18,8 +18,6 @@ $foto_user = $row["foto"];
 $contato = $row["contato"];
 $cidade = $row["cidade"];
 $pais = $row["pais"];
-
-$nivel = 40;
 
 ?>
 
