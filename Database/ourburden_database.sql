@@ -95,3 +95,38 @@ BEGIN
 END $$
  
 DELIMITER ;
+
+
+SELECT expe, nivel FROM WHERE usuario = id
+
+
+
+# PROCEDURE ATUALIZA expe
+
+delimiter $$
+CREATE OR REPLACE PROCEDURE AddExpe(IN id_att INT, IN new_ex INT)
+BEGIN
+	
+	UPDATE pontuacao
+	SET expe = expe + new_ex
+	WHERE id = id_att;
+	
+END $$
+delimiter ;
+
+
+
+
+# TRIGGER ATUALIZA NIVEL
+
+delimiter $$
+CREATE OR REPLACE TRIGGER AtualizaNivel BEFORE UPDATE ON pontuacao
+FOR EACH ROW
+BEGIN
+
+	IF (NEW.expe > 100) then
+		SET NEW.expe = NEW.expe - 100, NEW.nivel = NEW.nivel + 1;
+	END IF;
+	
+END $$
+delimiter ;
