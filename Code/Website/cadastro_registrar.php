@@ -38,10 +38,11 @@ $login = $db->login_site($username, $password);
         </ul>
     </header>
     <main>
+    <br><br> <br><br> <br>
         <div class="container">
             <aside>
                 <div class="secao">
-                    <img src="image/Terra.png">
+                    <img src="image/Logo.png">
                     <br><br><br>
                     <h1>Faça a diferença!</h1>
                     <br><br>
@@ -65,6 +66,7 @@ $login = $db->login_site($username, $password);
             </div>         
             
         </div>
+        <br><br> <br><br> <br>
     </main>
     <footer class='centro'>Desenvolvimento Fatec &copy; 2022</footer>
     
