@@ -16,7 +16,13 @@ $perfil->__construct();
 
 $new_pontuacao = $soma + $select['pont'];
 
-$result = $perfil->update_quiz($new_pontuacao, $id)
+$result = $perfil->update_quiz($new_pontuacao, $id);
+
+$perfil->__destruct();
+$perfil->__construct();
+
+$perfil->add_experiencia($id, $soma * 2);
+
 ?>
 
 <!DOCTYPE html>

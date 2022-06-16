@@ -9,7 +9,13 @@ $ss = new Session_User();
 $id = $ss->check_loggedin();
 
 $arvorequant = $_POST["arvore_name"];
-$Banco = new BancoDados;
+$Banco = new BancoDados();
+
+$Banco->add_experiencia($id, 120);
+
+$Banco->__destruct();
+$Banco->__construct();
+
 ?>
 
 <!doctype html>

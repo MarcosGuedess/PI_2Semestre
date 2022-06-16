@@ -31,7 +31,14 @@ $perfil->__construct();
 
 $new_pontuacao = $soma_tudo + $select['calc'];
 
-$result = $perfil->update_calculadora($new_pontuacao, $id)
+$result = $perfil->update_calculadora($new_pontuacao, $id);
+
+
+$perfil->__destruct();
+
+$perfil->__construct();
+
+$perfil->add_experiencia($id, 140);
 
 ?>
 

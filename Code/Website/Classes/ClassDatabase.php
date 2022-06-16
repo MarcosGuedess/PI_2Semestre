@@ -44,6 +44,16 @@ class BancoDados{
         }
     }
 
+    public function add_experiencia($id, $expe){
+        $sql = "CALL AddExpe($id, $expe)";
+        $result = mysqli_query($this->conn, $sql);
+        if ($result) {
+            return $result;
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($this->conn);
+        }
+    }
+
     public function select_user($id){
         $sql = "CALL select_usuario($id)";
         $result = mysqli_query($this->conn, $sql); 
