@@ -38,11 +38,11 @@ $perfil->add_experiencia($id, $soma * 2);
 <body class="quiz">
     <header>
         <ul>
-            <a href="../index.php"><li>Home</li></a>
-            <a href="#"><li>Calculadora De CO2</li></a>
-            <a href="../index.php"><li>Sobre Nós</li></a>
-            <a href="../realizar_logout.php"><li>Acervos</li></a>
-            <a href="../../index.php" id="title"><li>Cadastre-Se</li></a>
+            <a href="../html/index.html"><li>Home</li></a>
+            <a href="../perfil/perfil_usuario.php"><li>Acesso ao Perfil</li></a>
+            <a href="../html/index.html"><li>Sobre Nós</li></a>
+            <a href="../realizar_logout.php"><li>Sair</li></a>
+            <a href="../html/cadastro.html" id="title"><li>Cadastre-Se</li></a>
         </ul>
     </header>
     <main class="tela-principal">
