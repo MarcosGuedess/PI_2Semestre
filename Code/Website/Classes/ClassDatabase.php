@@ -23,7 +23,7 @@ class BancoDados{
             $print = "Cadastro feito com sucesso";
             return $print;
         } else {
-            $print = "Error: " . $sql . "<br>" . mysqli_error($this->conn);
+            $print = "Erro ao cadastrar, usuário já existente.";
             return $print;
         }
     }
@@ -50,7 +50,7 @@ class BancoDados{
         if ($result) {
             return $result;
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($this->conn);
+            echo "Erro ao adicionar experiência.";
         }
     }
 
@@ -62,7 +62,7 @@ class BancoDados{
             return $row = $result->fetch_assoc();
         } 
         else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($this->conn);
+            echo "Erro ao selecionar usuário";
         }
     }
 
@@ -72,7 +72,7 @@ class BancoDados{
         if ($result) {
             return $soma;
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($this->conn);
+            echo "Erro ao atualizar pontuação";
         }
     }
 
@@ -82,7 +82,7 @@ class BancoDados{
         if ($result) {
             return "";
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($this->conn);
+            echo "Erro ao atualizar pontuação.";
         }
     }
 
@@ -91,7 +91,7 @@ class BancoDados{
         if (mysqli_query($this->conn, $sql)) {
             echo "Atualização feita com sucesso";
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($this->conn);
+            echo "Erro ao atualizar perfil";
         }
     }
 
@@ -101,7 +101,7 @@ class BancoDados{
         if (mysqli_query($this->conn, $sql)) {
             echo "Atualização feita com sucesso";
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($this->conn);
+            echo "Erro ao atualizar árvore.";
         }
     }
 
