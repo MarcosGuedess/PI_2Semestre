@@ -3,6 +3,10 @@
 require './Classes/ClassDatabase.php';
 require './Classes/ClassSession.php';
 
+if(!isset($_POST['username'])){
+    header("location: ./html/index.html");
+}
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 

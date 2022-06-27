@@ -2,6 +2,10 @@
 
 require './Classes/ClassDatabase.php';
 
+if(!isset($_POST['name'])){
+    header("location: ./html/index.html");
+}
+else{
 $name = $_POST['name'];
 $username = $_POST['username'];
 $contato = $_POST['contato'];
@@ -14,7 +18,7 @@ $db = new BancoDados();
 
 $log = $db->adicionar_user($username, $password, $name, $contato, $cidade, $pais);
 $login = $db->login_site($username, $password);
-
+}
 ?>
 
 
